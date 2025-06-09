@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "altgpt-api-collection",
+		"name": "Alt-GPT-v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/auth/signup"
+			}
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/auth/login"
+			}
+		},
+		{
+			"name": "List Models",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/models"
+			}
+		},
+		{
+			"name": "Set API Key",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/models/set-key"
+			}
+		},
+		{
+			"name": "List Threads",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/threads"
+			}
+		},
+		{
+			"name": "Get Thread",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/threads/123"
+			}
+		},
+		{
+			"name": "Post Message",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/threads/123/message"
+			}
+		},
+		{
+			"name": "Edit Message",
+			"request": {
+				"method": "PUT",
+				"url": "http://localhost:8080/v1/threads/123/message/456"
+			}
+		},
+		{
+			"name": "Delete Message",
+			"request": {
+				"method": "DELETE",
+				"url": "http://localhost:8080/v1/threads/123/message/456"
+			}
+		},
+		{
+			"name": "React to Message",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/threads/123/message/456/react"
+			}
+		},
+		{
+			"name": "Share Thread",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/threads/123/share"
+			}
+		},
+		{
+			"name": "Search Threads",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/threads/search"
+			}
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/files/upload"
+			}
+		},
+		{
+			"name": "File/Media Preview",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/files/abc/preview"
+			}
+		},
+		{
+			"name": "File/Media Download",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/files/abc/download"
+			}
+		},
+		{
+			"name": "Upload Voice Note",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/files/voice"
+			}
+		},
+		{
+			"name": "Get Settings",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/user/settings"
+			}
+		},
+		{
+			"name": "Update Settings",
+			"request": {
+				"method": "PUT",
+				"url": "http://localhost:8080/v1/user/settings"
+			}
+		},
+		{
+			"name": "Get User Profile",
+			"request": {
+				"method": "GET",
+				"url": "http://localhost:8080/v1/user/profile"
+			}
+		},
+		{
+			"name": "Update User Profile",
+			"request": {
+				"method": "PUT",
+				"url": "http://localhost:8080/v1/user/profile"
+			}
+		},
+		{
+			"name": "Upload Avatar",
+			"request": {
+				"method": "POST",
+				"url": "http://localhost:8080/v1/user/avatar"
+			}
+		},
+		{
+			"name": "Ask Model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"provider\": \"openai\",\n  \"model\": \"gpt-4o\",\n  \"messages\": [\n    { \"role\": \"system\", \"content\": \"You are a helpful assistant.\" },\n    { \"role\": \"user\", \"content\": \"What is the capital of France?\" }\n  ],\n  \"settings\": { \"temperature\": 0.7 }\n}"
+				},
+				"url": "http://localhost:8080/v1/ask"
+			},
+			"description": "Ask a question or send a conversation to a specific model/provider.\n\nPOST body:\n- provider: string (e.g. 'openai')\n- model: string (e.g. 'gpt-4o')\n- messages: array of { role, content } (full conversation or single question)\n- settings: object (e.g. temperature, systemPrompt)\n- apiKey: string (optional, per-request key)\n\nReturns: { answer }"
+		}
+	]
+}

@@ -1,0 +1,118 @@
+{
+	"openai": {
+		"gpt-4.1": {
+			"displayName": "GPT-4.1",
+			"formats": {
+				"input": [
+					"text"
+				],
+				"output": [
+					"text",
+					"code"
+				]
+			},
+			"pricing": {
+				"input": 10,
+				"output": 30
+			},
+			"images": false
+		},
+		"gpt-4.1-mini": {},
+		"gpt-4.1-nano": {},
+		"gpt-4o": {
+			"displayName": "GPT-4o",
+			"formats": {
+				"input": [
+					"text",
+					"image"
+				],
+				"output": [
+					"text",
+					"code",
+					"image"
+				]
+			},
+			"images": true,
+			"pricing": {
+				"input": 5,
+				"output": 15
+			}
+		},
+		"gpt-4o-mini": {},
+		"gpt-4-turbo": {},
+		"gpt-4": {},
+		"o3-mini": {},
+		"o3": {},
+		"o4-mini": {},
+		"o1": {},
+		"o1-mini": {},
+		"o1-preview": {}
+	},
+	"anthropic": {
+		"claude-4-opus-20250514": {
+			"displayName": "Claude 4 Opus",
+			"formats": {
+				"input": [
+					"text"
+				],
+				"output": [
+					"text"
+				]
+			},
+			"pricing": {
+				"input": 15,
+				"output": 75
+			}
+		},
+		"claude-4-sonnet-20250514": {},
+		"claude-3-7-sonnet-20250219": {},
+		"claude-3-5-sonnet-20241022": {},
+		"claude-3-5-sonnet-20240620": {},
+		"claude-3-5-haiku-20241022": {}
+	},
+	"mistral": {
+		"pixtral-large-latest": {},
+		"mistral-large-latest": {},
+		"mistral-small-latest": {},
+		"pixtral-12b-2409": {}
+	},
+	"google-generative-ai": {
+		"gemini-2.0-flash-exp": {
+			"displayName": "Gemini 2.0 Flash Exp",
+			"formats": {
+				"input": [
+					"text",
+					"image"
+				],
+				"output": [
+					"text",
+					"image"
+				]
+			},
+			"images": true
+		},
+		"gemini-1.5-flash": {},
+		"gemini-1.5-pro": {}
+	},
+	"google-vertex": {
+		"gemini-2.0-flash-exp": {},
+		"gemini-1.5-flash": {},
+		"gemini-1.5-pro": {}
+	},
+	"deepseek": {
+		"deepseek-chat": {},
+		"deepseek-reasoner": {}
+	},
+	"cerebras": {
+		"llama3.1-8b": {},
+		"llama3.1-70b": {},
+		"llama3.3-70b": {}
+	},
+	"groq": {
+		"meta-llama/llama-4-scout-17b-16e-instruct": {},
+		"llama-3.3-70b-versatile": {},
+		"llama-3.1-8b-instant": {},
+		"mixtral-8x7b-32768": {},
+		"gemma2-9b-it": {}
+	}
+}
