@@ -1,7 +1,9 @@
 {
     "name": "alt-gpt-v1",
     "version": "1.0.0",
-    "src/main": "index.ts",
+    "src/main": "src/index.ts",
+    "module": "src/api/index.ts",
+    "type": "module",
     "license": "MIT",
     "author": "",
     "scripts": {
