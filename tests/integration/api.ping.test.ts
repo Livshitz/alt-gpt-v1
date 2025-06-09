@@ -1,4 +1,4 @@
-import server from '../../src/api';
+import { server } from '../../src/api';
 
 const fetch = globalThis.fetch || require('node-fetch');
 

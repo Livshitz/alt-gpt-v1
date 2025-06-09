@@ -1,4 +1,4 @@
-import server from '../../src/api';
+import { server } from '../../src/api';
 
 describe('/v1/models endpoint', () => {
 	it('should return a list of mock models', async () => {

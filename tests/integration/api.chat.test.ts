@@ -1,4 +1,4 @@
-import server from '../../src/api';
+import { server } from '../../src/api';
 
 describe('/v1/chat endpoint', () => {
 	it('should return a mock response', async () => {

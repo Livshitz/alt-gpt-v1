@@ -1,4 +1,4 @@
-import server from '../../src/api';
+import { server } from '../../src/api';
 
 describe('/v1/auth/login endpoint', () => {
 	it('should return a mock token and user', async () => {
