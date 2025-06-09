@@ -1,13 +1,14 @@
-import { RouterWrapper } from 'edge.libx.js/src/modules/RouterWrapper.js';
-import { json, IRequest } from 'itty-router';
-import ai from '../ai';
+import di from '../di/container';
+import { ILlmProvider } from '../llm/ILlmProvider';
 
-export default function getModelsRouter(base = '') {
-	const routerWrapper = RouterWrapper.getNew(base);
-	routerWrapper.router.get('/', async (req: IRequest) => {
-		const models = ai.listProvidersModels();
-		return json({ models });
-	});
-	routerWrapper.router.post('/set-key', async (req: IRequest) => json({ endpoint: 'set api key' }));
-	return routerWrapper;
+export async function handleModelsRequest(req: Request): Promise<Response> {
+	if (req.method !== 'GET') {
+		return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: { 'Content-Type': 'application/json' } });
+	}
+	const llm = di.get<ILlmProvider>('llm');
+	if (!llm.listModels) {
+		return new Response(JSON.stringify({ models: [] }), { headers: { 'Content-Type': 'application/json' } });
+	}
+	const models = await llm.listModels();
+	return new Response(JSON.stringify({ models }), { headers: { 'Content-Type': 'application/json' } });
 } 

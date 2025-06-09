@@ -63,7 +63,7 @@ function getSubRouter(base = '') {
   return subRouter;
 }
 
-const apiRouter = RouterWrapper.getNew('/api');
+const apiRouter = RouterWrapper.getNew('/v1');
 apiRouter.registerRoute('/v1', getSubRouter);
 apiRouter.catchNotFound();
 
@@ -115,7 +115,7 @@ export default askRouter.createServerAdapter().handle;
 ```ts
 import { RouterWrapper } from 'edge.libx.js';
 
-const routerWrapper = RouterWrapper.getNew('/api');
+const routerWrapper = RouterWrapper.getNew('/v1');
 routerWrapper.router.get('/hello', (req) => new Response('Hello, world!'));
 routerWrapper.catchNotFound();
 
